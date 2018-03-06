@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation'; // 1.0.0-beta.27
-import { Button, View, Text, FlatList, ActivityIndicator } from 'react-native';
+import { Button, View, Text, FlatList, ActivityIndicator, TouchableWithoutFeedback } from 'react-native';
 import { Service } from '../../services/services';
 import { List, ListItem, SearchBar } from 'react-native-elements';
 
@@ -88,16 +88,23 @@ export class HomeComponent extends React.Component<any, IStateHomeComponent> {
                     keyExtractor={item => item.email}
                     data={this.state.data}
                     renderItem={({ item }) => (
-                        <ListItem
-                            roundAvatar
-                            title={`${item.name.first} ${item.name.last}`}
-                            subtitle={item.email}
-                            avatar={{ uri: item.picture.thumbnail }}
-                            containerStyle={{ borderBottomWidth: 0 }}
+                        <TouchableWithoutFeedback onPress={()=> this.onPressItem(item)}>
+                            <ListItem
+                                roundAvatar
+                                title={`${item.name.first} ${item.name.last}`}
+                                subtitle={item.email}
+                                avatar={{ uri: item.picture.thumbnail }}
+                                containerStyle={{ borderBottomWidth: 0 }}
                         />
+                        </TouchableWithoutFeedback>
                     )}
                 />
             </List>
         );
+    }
+
+    onPressItem = (item: any) => {
+        const { navigate } = this.props.navigation;
+        navigate('Details', { item: item })
     }
 }

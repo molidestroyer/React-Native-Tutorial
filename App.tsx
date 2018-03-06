@@ -10,17 +10,28 @@ export default class App extends React.Component {
   }
 }
 
+const mapNavigationStateParamsToProps = (SomeComponent: any) => {
+  return class extends React.Component<any> {
+      static navigationOptions = SomeComponent.navigationOptions; // better use hoist-non-react-statics
+      render() {
+          const { navigation: {state: {params}}} = this.props
+          return <SomeComponent {...params} {...this.props} />
+      }
+  }
+}
+
 const RootStack = StackNavigator(
   {
     Home: {
       screen: HomeComponent,
     },
     Details: {
-      screen: DetailsScreen,
+      screen: mapNavigationStateParamsToProps(DetailsScreen) ,
     },
   },
   {
     initialRouteName: 'Home',
   }
 );
+
 

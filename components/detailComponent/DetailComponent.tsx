@@ -1,53 +1,67 @@
 import React from 'react';
-import { AppRegistry, View, Text } from 'react-native';
+import { AppRegistry, View, Text, StyleSheet } from 'react-native';
+import { Avatar, Card, Divider } from 'react-native-elements';
+import { UserModel } from '../../models/userModel';
 
 interface IPropsDetailsScreen {
-  content: string,
-  id: number,
-  image: string,
-  title: string
+  item: UserModel
 }
 
 export class DetailsScreen extends React.Component<IPropsDetailsScreen> {
-  constructor(props: { title: string, content: string, image: string, id: number }) {
+  constructor(props: any) {
     super(props);
+    console.log(props.item);
 
-    // this.state = {
-    //   title: props.title,
-    //   content: props.content,
-    //   image: props.image,
-    //   id: props.id
-    // }
   }
-
   // componentWillReceiveProps(nextProps: {} | ((prevState: Readonly<{}>, props: {}) => {} | Pick<{}, never> | null) | Pick<{}, never> | null) {
   //   this.setState(nextProps);
   // }
 
   render() {
 
-    if (!(this.props.title && this.props.content && this.props.image)) {
-      return (
-        <View>
-          <View></View>
-          <Text>Loading</Text>
-          <View></View>
+    return (
+      <Card title="User card">
+        <View style={this.styles.user}>
+          <Avatar
+            xlarge
+            rounded
+            source={{ uri: this.props.item.picture.large }}
+            onPress={() => console.log("Works!")}
+            activeOpacity={0.7}
+          />
+          <Text style={this.styles.name}>{this.props.item.name.title} {this.props.item.name.first} {this.props.item.name.last}</Text>
+          <Text>{this.props.item.cell}</Text>
+          <Text>{this.props.item.email}</Text>
+          <Text>{this.props.item.gender}</Text>
+          <View style = {this.styles.lineStyle} />
+          <Text>{this.props.item.location.city}</Text>
+          <Text>{this.props.item.location.postcode}</Text>
+          <Text>{this.props.item.location.state}</Text>
+          <Text>{this.props.item.location.street}</Text>
+          <View style = {this.styles.lineStyle} />
+          <Text>{this.props.item.phone}</Text>
+          <View style = {this.styles.lineStyle} />
+          <Text>Registered on {this.props.item.registered}</Text>
         </View>
-      );
-    }
-    else {
-      /**
-       * we re using dangerouslySetInnerHTML from React to insert content that
-       * includes HTML tags into our structure; use this wisely and learn more at
-       * https://facebook.github.io/react/docs/dom-elements.html#dangerouslysetinnerhtml
-       */
-      return (
-        <View>
-          <View></View>
-          <Text>{this.props.title}</Text>
-          <View>{this.props.content}</View>
-        </View>
-      );
-    }
+      </Card>
+    );
   }
+
+  styles = StyleSheet.create({
+    lineStyle: {
+      borderWidth: 0.5,
+      borderColor: 'black',
+      margin: 10,
+    },
+    user: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 'auto'
+    },
+    name: {
+      fontSize: 30,
+      color: 'blue',
+      fontWeight: 'normal',
+    },
+  });
 }

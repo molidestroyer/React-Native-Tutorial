@@ -5,7 +5,7 @@ Below you'll find information about performing common tasks. The most recent ver
 ## Table of Contents
 * [Branch 1: Basic_creation_native_typescript](#Basic_creation_native_typescript)
 * [Branch 2: Adding_Navigation](#Adding_Navigation)
-* [Branch 3: First_call_to_api](#Branch_3:_First_call_to_api)
+* [Branch 3: First_call_to_api](#First_call_to_api)
 
 * [Other](#Other)
   * [Updating to New Releases](#updating-to-new-releases)
@@ -31,7 +31,33 @@ Below you'll find information about performing common tasks. The most recent ver
     * [iOS Simulator won't open](#ios-simulator-wont-open)
     * [QR Code does not scan](#qr-code-does-not-scan)
 
-## Branch 1: Basic_creation_native_typescript
+## Basic_creation_native_typescript
+Followed the tutorial here: (https://github.com/mathieudutour/create-react-native-app-typescript)
+
+- I use the typescript template , but also it's possible use javascript template
+
+## Adding_Navigation
+I use following component to add routing (https://github.com/react-navigation/react-navigation)
+
+- Steps done
+  - Splitted app in 2 react components
+  - Added navigation on app using related package.
+  - Added required package and typings
+
+Other Navigation Samples ->
+(https://expo.io/@react-navigation/NavigationPlayground)
+
+## First_call_to_api
+
+- New npm added for UI components(https://github.com/react-native-training/react-native-elements)
+
+- Created service with rand data, powered by https://randomuser.me/
+
+- Modified some list styles
+
+- Added header layout search
+
+- Added loading footer layout
 
 ## Updating to New Releases
 
