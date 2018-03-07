@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppRegistry, View, Text, StyleSheet } from 'react-native';
-import { Avatar, Card, Divider } from 'react-native-elements';
+import { Avatar, Card, Divider, Button } from 'react-native-elements';
 import { UserModel } from '../../models/userModel';
 
 interface IPropsDetailsScreen {
@@ -8,6 +8,27 @@ interface IPropsDetailsScreen {
 }
 
 export class DetailsScreen extends React.Component<IPropsDetailsScreen> {
+  static navigationOptions = ({ navigation }: any) => {
+    return {
+      headerTitle: 'Deatil user',
+      headerRight: (
+        <View style={{flexWrap: 'wrap', 
+        alignItems: 'flex-start',
+        flexDirection:'row' }}>
+          <Button onPress={() => {
+            navigation.navigate('CameraComponent', {})
+          }}
+            title="+C" color="#fff" />
+
+          <Button onPress={() => {
+            navigation.navigate('BarcodeComponent', {})
+          }}
+            title="+B" color="#fff" />
+        </View>
+      ),
+    };
+  };
+
   constructor(props: any) {
     super(props);
     console.log(props.item);
@@ -33,14 +54,14 @@ export class DetailsScreen extends React.Component<IPropsDetailsScreen> {
           <Text>{this.props.item.cell}</Text>
           <Text>{this.props.item.email}</Text>
           <Text>{this.props.item.gender}</Text>
-          <View style = {this.styles.lineStyle} />
+          <View style={this.styles.lineStyle} />
           <Text>{this.props.item.location.city}</Text>
           <Text>{this.props.item.location.postcode}</Text>
           <Text>{this.props.item.location.state}</Text>
           <Text>{this.props.item.location.street}</Text>
-          <View style = {this.styles.lineStyle} />
+          <View style={this.styles.lineStyle} />
           <Text>{this.props.item.phone}</Text>
-          <View style = {this.styles.lineStyle} />
+          <View style={this.styles.lineStyle} />
           <Text>Registered on {this.props.item.registered}</Text>
         </View>
       </Card>

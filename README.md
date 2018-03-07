@@ -6,6 +6,7 @@ Below you'll find information about performing common tasks. The most recent ver
 * [Branch 1: Basic_creation_native_typescript](#Basic_creation_native_typescript)
 * [Branch 2: Adding_Navigation](#Adding_Navigation)
 * [Branch 3: First_call_to_api](#First_call_to_api)
+* [Branch 4: Using_expo_to_use_camera](#Using_expo_to_use_camera)
 
 * [Other](#Other)
   * [Updating to New Releases](#updating-to-new-releases)
@@ -58,6 +59,19 @@ Other Navigation Samples ->
 - Added header layout search
 
 - Added loading footer layout
+
+## Using_expo_to_use_camera
+
+Expo apps are React Native apps which contain the Expo SDK. The SDK is a native-and-JS library which provides access to the device’s system functionality (things like the camera, contacts, local storage, and other hardware). That means you don’t need to use Xcode or Android Studio, or write any native code, and it also makes your pure-JS project very portable because it can run in any native environment containing the Expo SDK.
+
+Expo also provides UI components to handle a variety of use-cases that almost all apps will cover but are not baked into React Native core, e.g. icons, blur views, and more.
+
+Finally, the Expo SDK provides access to services which typically are a pain to manage but are required by almost every app. Most popular among these: Expo can manage your Assets for you, it can take care of Push Notifications for you, and it can build native binaries which are ready to deploy to the app store.
+
+-Created two new components to interact with the camera using expo.
+  - Samples from expo added: 
+    - Camera -> (https://docs.expo.io/versions/latest/sdk/camera.html)
+    - Barcode Scanner -> (https://docs.expo.io/versions/latest/sdk/bar-code-scanner.html)
 
 ## Updating to New Releases
 
