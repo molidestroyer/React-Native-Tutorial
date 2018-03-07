@@ -3,7 +3,7 @@
     "name": "Your App Name",
     "icon": "./assets/icon/puzzle.png",
     "version": "1.0.0",
-    "slug": "your-app-slug",
+    "slug": "my-app-native",
     "sdkVersion": "25.0.0",
     "packagerOpts": {
       "sourceExts": ["ts", "tsx"],
