@@ -8,6 +8,7 @@ Below you'll find information about performing common tasks. The most recent ver
 * [Branch 3: First_call_to_api](#First_call_to_api)
 * [Branch 4: Detail_view](#Detail_view)
 * [Branch 5: Using_expo_to_use_camera](#Using_expo_to_use_camera)
+* [Branch 6: Add_Continuous_integration_with_travis](#Add_Continuous_integration_with_travis)
 
 * [Other](#Other)
   * [Updating to New Releases](#updating-to-new-releases)
@@ -81,6 +82,37 @@ Finally, the Expo SDK provides access to services which typically are a pain to 
   - Samples from expo added: 
     - Camera -> (https://docs.expo.io/versions/latest/sdk/camera.html)
     - Barcode Scanner -> (https://docs.expo.io/versions/latest/sdk/bar-code-scanner.html)
+
+## Add_Continuous_integration_with_travis
+- Added continuous integration to the app.
+  - Register the app on https://travis-ci.org to have builds as soon as you push code to the repository (github in our case)
+  - Included into the project a reference to npm package appr https://github.com/FormidableLabs/appr, follow the steps included into.
+    - appr builds and deploys pull requests in your create-react-native-app (and other Expo-based) projects, and replies with a link you can open directly on your device or emulator.
+    - On that point when you create a new pull request to master it's send to travis and it automatically calls expo (https://expo.io) and starts creating the apk / ios app.
+
+  Requirement modify app.json have the app identifiers
+
+```json
+{
+  "expo": {
+    "name": "Your App Name",
+    "icon": "./assets/icon/puzzle.png",
+    "version": "1.0.0",
+    "slug": "my-app-native",
+    "sdkVersion": "25.0.0",
+    "packagerOpts": {
+      "sourceExts": ["ts", "tsx"],
+      "transformer": "node_modules/react-native-typescript-transformer/index.js"
+    },
+    "ios": {
+     "bundleIdentifier": "com.molidestroyer.myappnative"
+    },
+    "android": {
+      "package": "com.molidestroyer.myappnative"
+    }
+  }
+}
+``` 
 
 ## Updating to New Releases
 
