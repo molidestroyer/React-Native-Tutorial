@@ -28,6 +28,7 @@
     "appcenter": "^1.4.0",
     "appcenter-analytics": "^1.4.0",
     "appcenter-crashes": "^1.4.0",
+    "appcenter-push": "^1.4.0",
     "expo": "^25.0.0",
     "react": "16.2.0",
     "react-native": "0.52.0",
