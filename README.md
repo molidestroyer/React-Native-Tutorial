@@ -6,7 +6,8 @@ Below you'll find information about performing common tasks. The most recent ver
 * [Branch 1: Basic_creation_native_typescript](#Basic_creation_native_typescript)
 * [Branch 2: Adding_Navigation](#Adding_Navigation)
 * [Branch 3: First_call_to_api](#First_call_to_api)
-* [Branch 4: Using_expo_to_use_camera](#Using_expo_to_use_camera)
+* [Branch 4: Detail_view](#Detail_view)
+* [Branch 5: Using_expo_to_use_camera](#Using_expo_to_use_camera)
 
 * [Other](#Other)
   * [Updating to New Releases](#updating-to-new-releases)
@@ -59,6 +60,14 @@ Other Navigation Samples ->
 - Added header layout search
 
 - Added loading footer layout
+
+## Detail_view
+- Added detail view for every person on the list
+- Added some styles to the view
+- In that case object is not having states, it has some props that are passed as a parameter using the react-navigation component.
+- Modified react navigation to pass just the props to the new component.
+- Introduced on the list new touchable event.
+- Added interface typings on the model used. Thanks to (http://json2ts.com/)
 
 ## Using_expo_to_use_camera
 
