@@ -41,13 +41,13 @@ export class DetailsScreen extends React.Component<IPropsDetailsScreen> {
   render() {
 
     return (
-      <Card title="User card">
+      <Card title="User carde">
         <View style={this.styles.user}>
           <Avatar
             xlarge
             rounded
             source={{ uri: this.props.item.picture.large }}
-            onPress={() => console.log("Works!")}
+            onPress={() => console.log("Workeds!")}
             activeOpacity={0.7}
           />
           <Text style={this.styles.name}>{this.props.item.name.title} {this.props.item.name.first} {this.props.item.name.last}</Text>

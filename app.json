@@ -1,9 +1,19 @@
 {
   "expo": {
+    "name": "Your App Name",
+    "icon": "./assets/icon/puzzle.png",
+    "version": "1.0.0",
+    "slug": "your-app-slug",
     "sdkVersion": "25.0.0",
     "packagerOpts": {
       "sourceExts": ["ts", "tsx"],
       "transformer": "node_modules/react-native-typescript-transformer/index.js"
+    },
+    "ios": {
+     "bundleIdentifier": "com.molidestroyer.myappnative"
+    },
+    "android": {
+      "package": "com.molidestroyer.myappnative"
     }
   }
 }
