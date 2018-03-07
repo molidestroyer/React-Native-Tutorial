@@ -41,7 +41,7 @@ export class DetailsScreen extends React.Component<IPropsDetailsScreen> {
   render() {
 
     return (
-      <Card title="User card">
+      <Card title="User carde">
         <View style={this.styles.user}>
           <Avatar
             xlarge
